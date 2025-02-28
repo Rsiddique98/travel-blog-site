@@ -1,14 +1,18 @@
+/* Homepage */
+.position-absolute {
+    max-width: 80%; /* Prevents text from stretching too wide */
+    width: 100%;
+    padding: 10px;
+}
+
+
 .position-absolute h1 {
     margin-top: 60px; /* Adds space between the navbar and text */
+    
 }
 
-.position-absolute p + p {
-    margin-top: 0px; /* Ensures no margin between the two paragraph elements */
-}
 
-.position-relative {
-    position: relative;
-}
+/* Dark overlay */
 
 .overlay {
     position: absolute;
@@ -20,8 +24,33 @@
     z-index: 1;  /* Ensures the overlay is placed above the image but below the text */
 }
 
+/* Ensures text stays on top */
+
 .position-absolute {
     z-index: 2;  /* Ensures text stays above the overlay */
     color: white;  /* Ensures the text remains white */
     padding: 20px;  /* Adds space around the text */
+}
+
+/* Button styling */
+
+.btn-dark {
+    border: 1px solid white !important;  /* Ensures the border is applied */
+    
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) { 
+    .position-absolute {
+        max-width: 90%; /* Makes text fit smaller screens */
+        padding: 20px;
+    }
+
+    .position-absolute h1 {
+        margin-top: 60px; /* Adds space between the navbar and text */
+    }
+
+    .position-absolute p + p {
+        margin-top: 0px; /* Ensures no margin between the two paragraph elements */
+    }
 }
