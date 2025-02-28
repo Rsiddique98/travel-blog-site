@@ -4,10 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wanderlust Wonders</title>
+    <link rel="stylesheet" href="/styles.css?v=<%= Date.now() %>">
 </head>
 <body>
   <%- include("header.ejs") %> 
 
+  <div class="container-fluid p-0">
+    <div class="position-relative text-center text-white">
+        <img src="/images/Glico man.jpg" class="img-fluid w-100" style="height: 900px; object-fit: cover;" alt="Glico man">
+
+        <!-- Dark Overlay -->
+        <div class="overlay"></div>
+        <div class="position-absolute top-0 start-50 translate-middle-x mt-5">
+            <h1 class="display-3 fw-bold">Welcome to Wanderlust Wonders</h1>
+            <p class="lead fs-3 fw-normal">Your go-to space for sharing travel tales, tips and top destinations!</p>
+            <p class="text-center fs-4 fw-normal">Whether you're a solo adventurer, reminiscing about your first trip or a seasoned traveller with insider recommendations, this is where your journey comes to life.</p>
+            <p class="text-center fs-4 fw-normal">Create posts, inspire others and showcase your travel wisdom. Let’s wander together and discover the world, one story at a time!</p> 
+                
+            <a href="/create" class="btn btn-dark btn-lg">Write a post</a>
+        </div>
+    </div>
+</div>
 
 
 

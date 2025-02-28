@@ -5,6 +5,12 @@ const app = express();
 const port = 3000;
 
 // Middleware
+
+app.use((req, res, next) => {
+    console.log(`Request URL: ${req.url}`);
+    next();
+});
+
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
 
