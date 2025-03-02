@@ -54,3 +54,30 @@
         margin-top: 0px; /* Ensures no margin between the two paragraph elements */
     }
 }
+
+/* Blog posts */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-body {
+    background-color: rgb( 33, 37, 41);  /* Matches navbar color */
+    color: white !important; /* Ensures text is visible */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Ensures the body expands to fill the card */
+}
+
+.card-img-top {
+    height: 450px;
+    object-fit: cover; /* Ensures uniform image size */
+    width: 100%; /* Makes images responsive */
+}
+
+.card-text {
+    flex-grow: 1; /* Pushes the button to the bottom */ 
+}
+
