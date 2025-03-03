@@ -27,6 +27,29 @@ app.get("/edit", (req, res) => {
     res.render('edit.ejs');
 });
 
+app.get("/post1", (req, res) => {
+    res.render('post1.ejs');
+});
+
+app.get("/post2", (req, res) => {
+    res.render('post2.ejs');
+});
+
+app.get("/post3", (req, res) => {
+    res.render('post3.ejs');
+});
+
+app.get("/post4", (req, res) => {
+    res.render('post4.ejs');
+});
+
+app.get("/post5", (req, res) => {
+    res.render('post5.ejs');
+});
+
+app.get("/post6", (req, res) => {
+    res.render('post6.ejs');
+});
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}.`);

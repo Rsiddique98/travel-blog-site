@@ -40,7 +40,7 @@
 }
 
 /* Mobile-specific styles */
-@media (max-width: 768px) { 
+@media (min-width: 768px) { 
     .position-absolute {
         max-width: 90%; /* Makes text fit smaller screens */
         padding: 20px;
@@ -65,6 +65,11 @@
     overflow: hidden; /* Ensures images don’t break the curve */
 }
 
+.card-title {
+
+    font-size: 30px;
+}
+
 .card-body {
     background-color: rgb( 33, 37, 41);  /* Matches navbar color */
     color: white !important; /* Ensures text is visible */
@@ -85,3 +90,44 @@
     flex-grow: 1; /* Pushes the button to the bottom */ 
 }
 
+/* footer */
+ 
+        footer {
+      
+         width: 100vw;
+        background-color: rgb( 33, 37, 41);
+        padding: 35px; 
+         color: white; /* Ensures text remains visible */
+        
+    }
+
+    .footer-content {
+        max-width: 1200px; /* Keeps content structured */
+        margin: 0 auto; /* Centers content */
+        text-align: center; /* Centers text */
+     
+        
+    }
+
+    .emoji {
+
+        padding-left: 12px;
+        padding-right: 10px;
+     }
+
+     h2 {
+
+        font-size: 30px;
+     }
+
+     h3 {
+        font-size: 20px;
+     }
+
+     .favicons i {
+
+        margin-bottom: 30px;
+        font-size: 25px;
+        color: #f8eded;
+       padding: 10px;
+     }
