@@ -109,6 +109,12 @@
         
     }
 
+    footer hr {
+        border: 0.8px solid white; /* Increases thickness and makes it fully white */
+         margin: 20px auto; /* Centers it and adds spacing */
+        opacity: 0.5; /* Ensures it's fully visible */
+    }
+
     .emoji {
 
         padding-left: 12px;
@@ -130,4 +136,11 @@
         font-size: 25px;
         color: #f8eded;
        padding: 10px;
-     }
+       transition: color 0.2s ease-in-out, transform 0.2s ease-in-out; /* Smooth hover effect */
+}
+     
+/* Hover effect */
+.favicons i:hover {
+    color: white; /* Change color on hover */
+    transform: scale(1.2); /* Slightly enlarge icon */
+}
