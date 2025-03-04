@@ -93,10 +93,10 @@
 /* footer */
  
         footer {
-      
+    
          width: 100vw;
         background-color: rgb( 33, 37, 41);
-        padding: 35px; 
+        padding: 20px; 
          color: white; /* Ensures text remains visible */
         
     }
@@ -123,16 +123,17 @@
 
      h2 {
 
-        font-size: 30px;
+        font-size: 24px;
+        
      }
 
      h3 {
-        font-size: 20px;
+        font-size: 18px;
      }
 
      .favicons i {
 
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         font-size: 25px;
         color: #f8eded;
        padding: 10px;
@@ -144,3 +145,5 @@
     color: white; /* Change color on hover */
     transform: scale(1.2); /* Slightly enlarge icon */
 }
+
+/* Create a post page */
