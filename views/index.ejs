@@ -31,86 +31,19 @@
 
 <div class="container my-5">
     <div class="row g-4">
-
-        <!-- Blog Post 1 -->
+        <% blogPosts.forEach((post, index) => { %>
         <div class="col-12 col-md-6 col-lg-4">
-            <div class="card h-100">
-                <img src="/images/Lake bled.jpg" class="card-img-top" alt="Lake Bled">
-                <div class="card-body">
-                    <p class="card-author">Posted by Rida Siddique, 09/09/2024</p>
-                    <h5 class="card-title">Exploring Slovenia: Lake Bled</h5>
-                    <p class="card-text">A journey through the breathtaking landscapes of Slovenia.</p>
-                    <a href="/post1" class="btn btn-dark">Read More</a>
-                </div>
+        <div class="card h-100">
+            <img src="<%= post.image %>" class="card-img-top" alt="<%= post.title %>">
+            <div class="card-body">
+                <p class="card-author">Posted by <%= post.author %>, <%= post.date %></p>
+                <h5 class="card-title"><%= post.title %></h5>
+                <p class="card-text"><%= post.content.substring(0, 100) %>...</p>
+                <a href="/post/<%= index %>" class="btn btn-dark">Read More</a>
             </div>
         </div>
-
-        <!-- Blog Post 2 -->
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="card h-100">
-                <img src="/images/Tsutenkaku.jpg" class="card-img-top" alt="Tsutenkaku">
-                <div class="card-body">
-                    <p class="card-author">Posted by Rida Siddique, 11/12/2024</p>
-                    <h5 class="card-title">Osaka: A Food Lover’s Paradise</h5>
-                    <p class="card-text">From street food in Dotonbori to Michelin stars, Osaka has it all.</p>
-                    <a href="/post2" class="btn btn-dark">Read More</a>
-                </div>
-            </div>
-        </div>
-
-
-          <!-- Blog Post 3 -->
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card h-100">
-                <img src="/images/The Bund.jpg" class="card-img-top" alt="The Bund">
-                <div class="card-body">
-                    <p class="card-author">Posted by Rida Siddique, 12/12/2024</p>
-                    <h5 class="card-title">12 Hours in Shanghai</h5>
-                    <p class="card-text">The most unforgettable skyline by The Bund to the world's longest shopping district, Nanjing Road, here's why Shanghai should be your next travel destination.</p>
-                    <a href="/post3" class="btn btn-dark">Read More</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Blog Post 4 -->
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="card h-100">
-                <img src="/images/arashiyama.jpg" class="card-img-top" alt="arashiyama">
-                <div class="card-body">
-                    <p class="card-author">Posted by Rida Siddique, 15/12/2024</p>
-                    <h5 class="card-title">The Charms of Kyoto, Japan</h5>
-                    <p class="card-text">From Arashiyama to the Gion district, here's why Kyoto should be at the top of your list of places to hit up when exploring Japan's Kansai region.</p>
-                    <a href="/post4" class="btn btn-dark">Read More</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Blog Post 5 -->
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="card h-100">
-                <img src="/images/Lago di Carezza.jpg" class="card-img-top" alt="Lago di Carezza">
-                <div class="card-body">
-                    <p class="card-author">Posted by Rida Siddique, 12/09/2024</p>
-                    <h5 class="card-title">Exploring The Dolomites in Northeastern Italy</h5>
-                    <p class="card-text">Beautiful emerald green waters to the iconic three peaks of Laveredo, there's so much to see in the Dolomites.</p>
-                    <a href="/post5" class="btn btn-dark">Read More</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Blog Post 6 -->
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="card h-100">
-                <img src="/images/Nara.jpg" class="card-img-top" alt="Nara">
-                <div class="card-body">
-                    <p class="card-author">Posted by Rida Siddique, 20/12/2024</p>
-                    <h5 class="card-title">A day trip to Nara, Japan</h5>
-                    <p class="card-text">Less than an hour away by train from Kyoto and Osaka, Nara is the perfect place to spend a wholesome day taking in the natural beauty, eating fresh mochi and roaming around the deer park!</p>
-                    <a href="/post6" class="btn btn-dark">Read More</a>
-                </div>
-            </div>
-       </div>
-
+   </div>
+   <% }) %>
     </div>
 </div>
 

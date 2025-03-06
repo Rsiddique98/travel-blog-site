@@ -11,8 +11,7 @@
     <%- include("header.ejs") %>
    
     <div class="container mt-5">
-
-        <h1 class="lead fs-3 fw-semibold mb-3">Share your unforgettable experience right here!</h1>
+    <h1 class="lead fs-3 fw-semibold mb-3">Share your unforgettable experience right here!</h1>
     <form action="/create" method="POST" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="title" class="form-label">Blog Title</label>
@@ -20,7 +19,7 @@
         </div>
     
         <div class="mb-3">
-            <label for="author" class="form-label">Author Name</label>
+            <label for="author" class="form-label">Author Name/Date added</label>
             <input type="text" class="form-control" id="author" name="author" required>
         </div>
     
@@ -34,7 +33,7 @@
             <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
         </div>
     
-        <button type="submit" class="btn btn-dark mb-5">Publish Post</button>
+        <button type="submit" class="btn btn-dark mt-3 mb-5">Publish Post</button>
     </form>
     </div>
 
