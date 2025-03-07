@@ -8,7 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 
 // Middleware
@@ -19,7 +19,14 @@ app.use((req, res, next) => {
 });
 
 app.set('view engine', 'ejs');
-app.use(express.static(path.join(__dirname, "public")));
+
+app.use(express.static(path.join(__dirname, "public"), {
+    setHeaders: (res, filePath) => {
+        console.log(`Serving file: ${filePath}`); // Debugging: See if files are served
+    }
+}));
+
+
 app.use(bodyParser.urlencoded({extended: true }));
 
 
