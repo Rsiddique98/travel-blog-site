@@ -2,6 +2,10 @@ import express from "express";
 import bodyParser from "body-parser";
 import multer from "multer";
 import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const port = 3000;
@@ -15,7 +19,7 @@ app.use((req, res, next) => {
 });
 
 app.set('view engine', 'ejs');
-app.use(express.static(path.join(path.resolve(), "public")));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.urlencoded({extended: true }));
 
 
@@ -100,7 +104,7 @@ let blogPosts = [
         title: "Exploring Slovenia: Lake Bled",
         author: "Rida Siddique",
         date: "09/09/2024",
-        image: "/images/Lake bled.jpg",
+        image: "/images/Lake-bled.jpg",
         content: "A journey through the breathtaking landscapes of Slovenia. A journey through the breathtaking landscapes of Slovenia.A journey through the breathtaking landscapes of Slovenia. A journey through the breathtaking landscapes of Slovenia.A journey through the breathtaking landscapes of Slovenia. A journey through the breathtaking landscapes of Slovenia.A journey through the breathtaking landscapes of Slovenia. A journey through the breathtaking landscapes of Slovenia.A journey through the breathtaking landscapes of Slovenia. A journey through the breathtaking landscapes of Slovenia.A journey through the breathtaking landscapes of Slovenia. A journey through the breathtaking landscapes of Slovenia.",
     },
     {
@@ -115,7 +119,7 @@ let blogPosts = [
         title: "12 Hours in Shanghai",
         author: "Rida Siddique",
         date: "12/12/2024",
-        image: "/images/The Bund.jpg",
+        image: "/images/The-Bund.jpg",
         content: "The most unforgettable skyline by The Bund to the world's longest shopping district, Nanjing Road, here's why Shanghai should be your next travel destination.",
     },
 
@@ -131,7 +135,7 @@ let blogPosts = [
         title: "Exploring The Dolomites in Northeastern Italy",
         author: "Rida Siddique",
         date: "12/09/2024",
-        image: "/images/Lago di Carezza.jpg",
+        image: "/images/Lago-di-Carezza.jpg",
         content: "Beautiful emerald green waters to the iconic three peaks of Laveredo, there's so much to see in the Dolomites.Beautiful emerald green waters to the iconic three peaks of Laveredo, there's so much to see in the Dolomites.Beautiful emerald green waters to the iconic three peaks of Laveredo, there's so much to see in the Dolomites.Beautiful emerald green waters to the iconic three peaks of Laveredo, there's so much to see in the Dolomites.Beautiful emerald green waters to the iconic three peaks of Laveredo, there's so much to see in the Dolomites.Beautiful emerald green waters to the iconic three peaks of Laveredo, there's so much to see in the Dolomites.Beautiful emerald green waters to the iconic three peaks of Laveredo, there's so much to see in the Dolomites.Beautiful emerald green waters to the iconic three peaks of Laveredo, there's so much to see in the Dolomites.",
     },
 
