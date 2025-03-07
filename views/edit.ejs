@@ -36,7 +36,9 @@
             <td>
                 <a href="/edit/<%= index %>" class="btn btn-dark w-100 mt-3 mb-2">Edit</a>
                 <br>
-                <a href="/delete/<%= index %>" class="btn btn-dark w-100">Delete</a>
+                <form action="/delete/<%= index %>" method="POST">
+                    <button type="submit" class="btn btn-dark w-100">Delete</button>
+                </form>
             </td>
           </tr>
           <% }); %>

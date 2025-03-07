@@ -146,9 +146,3 @@
     transform: scale(1.2); /* Slightly enlarge icon */
 }
 
-/* Manage entries table */
-
-.table-dark th {
-    margin-left: 10px; /* Adjust the value as needed */
-  }
-

@@ -55,6 +55,14 @@ app.get("/edit/:id", (req, res) => {
     }
 });
 
+// Route to delete a post
+
+app.post("/delete/:id", (req, res) => {
+    const { id } = req.params; // Get the ID from the URL
+    blogPosts.splice(id, 1); // Remove the post from the array by its ID
+
+    res.redirect("/edit"); // Redirect back to the manage entries page
+});
 
 // Static blog posts
 
