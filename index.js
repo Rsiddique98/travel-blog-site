@@ -6,6 +6,7 @@ import path from "path";
 const app = express();
 const port = 3000;
 
+
 // Middleware
 
 app.use((req, res, next) => {
@@ -13,8 +14,8 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use(express.static("public"));
 app.set('view engine', 'ejs');
+app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true }));
 
 
