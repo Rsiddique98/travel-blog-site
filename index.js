@@ -38,8 +38,23 @@ app.get("/create", (req, res) => {
 });
 
 app.get("/edit", (req, res) => {
-    res.render('edit.ejs');
+    res.render('edit.ejs', { blogPosts });
 });
+
+
+// Route to edit a specific post
+
+app.get("/edit/:id", (req, res) => {
+    const { id } = req.params; // Get the ID from the URL
+    const post = blogPosts[id]; // Find the post by its ID
+
+    if (post) {
+        res.render('edit-form.ejs', { post, id }); // Pass the post and its ID to the view
+    } else {
+        res.status(404).send('Post not found');
+    }
+});
+
 
 // Static blog posts
 
