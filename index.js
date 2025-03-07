@@ -41,6 +41,20 @@ app.get("/edit", (req, res) => {
     res.render('edit.ejs', { blogPosts });
 });
 
+// route to render individual blog post pages
+
+app.get("/post/:id", (req, res) => {
+    const { id } = req.params; // Gets the ID from the URL
+    const post = blogPosts[id]; // Finds the post by its ID
+
+    if (post) {
+        res.render('posts.ejs', { post }); // Passes the post to the view
+    } else {
+        res.status(404).send('Post not found');
+    }
+});
+
+
 
 // Route to edit a specific post
 
@@ -55,6 +69,19 @@ app.get("/edit/:id", (req, res) => {
     }
 });
 
+// Route to handle an update post request
+
+app.post("/edit/:id", upload.single("image"), (req, res) => {
+    const { id } = req.params; // Get the ID from the URL
+    const { title, author, date, content } = req.body;
+    const image = req.file ? "/uploads/" + req.file.filename : blogPosts[id].image; // Use existing image if not updated
+
+    // Update the post in the array
+    blogPosts[id] = { title, author, date, image, content };
+
+    res.redirect("/edit"); // Redirect back to the manage entries page
+});
+
 // Route to delete a post
 
 app.post("/delete/:id", (req, res) => {
@@ -64,31 +91,6 @@ app.post("/delete/:id", (req, res) => {
     res.redirect("/edit"); // Redirect back to the manage entries page
 });
 
-// Static blog posts
-
-app.get("/post/0", (req, res) => {
-    res.render('post0.ejs');
-});
-
-app.get("/post/1", (req, res) => {
-    res.render('post1.ejs');
-});
-
-app.get("/post/2", (req, res) => {
-    res.render('post2.ejs');
-});
-
-app.get("/post/3", (req, res) => {
-    res.render('post3.ejs');
-});
-
-app.get("/post/4", (req, res) => {
-    res.render('post4.ejs');
-});
-
-app.get("/post/5", (req, res) => {
-    res.render('post5.ejs');
-});
 
 // Blog posts storage 
 
@@ -98,14 +100,14 @@ let blogPosts = [
         author: "Rida Siddique",
         date: "09/09/2024",
         image: "/images/Lake bled.jpg",
-        content: "A journey through the breathtaking landscapes of Slovenia.",
+        content: "A journey through the breathtaking landscapes of Slovenia. A journey through the breathtaking landscapes of Slovenia.A journey through the breathtaking landscapes of Slovenia. A journey through the breathtaking landscapes of Slovenia.A journey through the breathtaking landscapes of Slovenia. A journey through the breathtaking landscapes of Slovenia.A journey through the breathtaking landscapes of Slovenia. A journey through the breathtaking landscapes of Slovenia.A journey through the breathtaking landscapes of Slovenia. A journey through the breathtaking landscapes of Slovenia.A journey through the breathtaking landscapes of Slovenia. A journey through the breathtaking landscapes of Slovenia.",
     },
     {
         title: "Osaka: A Food Lover’s Paradise",
         author: "Rida Siddique",
         date: "11/12/2024",
         image: "/images/Tsutenkaku.jpg",
-        content: "From street food in Dotonbori to Michelin stars, Osaka has it all.",
+        content: "From street food in Dotonbori to Michelin stars, Osaka has it all.From street food in Dotonbori to Michelin stars, Osaka has it all. From street food in Dotonbori to Michelin stars, Osaka has it all. From street food in Dotonbori to Michelin stars, Osaka has it all. From street food in Dotonbori to Michelin stars, Osaka has it all.From street food in Dotonbori to Michelin stars, Osaka has it all. From street food in Dotonbori to Michelin stars, Osaka has it all.From street food in Dotonbori to Michelin stars, Osaka has it all. From street food in Dotonbori to Michelin stars, Osaka has it all.From street food in Dotonbori to Michelin stars, Osaka has it all. From street food in Dotonbori to Michelin stars, Osaka has it all.From street food in Dotonbori to Michelin stars, Osaka has it all. From street food in Dotonbori to Michelin stars, Osaka has it all.From street food in Dotonbori to Michelin stars, Osaka has it all. From street food in Dotonbori to Michelin stars, Osaka has it all. From street food in Dotonbori to Michelin stars, Osaka has it all. From street food in Dotonbori to Michelin stars, Osaka has it all.From street food in Dotonbori to Michelin stars, Osaka has it all. From street food in Dotonbori to Michelin stars, Osaka has it all.From street food in Dotonbori to Michelin stars, Osaka has it all. From street food in Dotonbori to Michelin stars, Osaka has it all.From street food in Dotonbori to Michelin stars, Osaka has it all. From street food in Dotonbori to Michelin stars, Osaka has it all.From street food in Dotonbori to Michelin stars, Osaka has it all. From street food in Dotonbori to Michelin stars, Osaka has it all.",
     },
 
     {
@@ -129,7 +131,7 @@ let blogPosts = [
         author: "Rida Siddique",
         date: "12/09/2024",
         image: "/images/Lago di Carezza.jpg",
-        content: "Beautiful emerald green waters to the iconic three peaks of Laveredo, there's so much to see in the Dolomites.",
+        content: "Beautiful emerald green waters to the iconic three peaks of Laveredo, there's so much to see in the Dolomites.Beautiful emerald green waters to the iconic three peaks of Laveredo, there's so much to see in the Dolomites.Beautiful emerald green waters to the iconic three peaks of Laveredo, there's so much to see in the Dolomites.Beautiful emerald green waters to the iconic three peaks of Laveredo, there's so much to see in the Dolomites.Beautiful emerald green waters to the iconic three peaks of Laveredo, there's so much to see in the Dolomites.Beautiful emerald green waters to the iconic three peaks of Laveredo, there's so much to see in the Dolomites.Beautiful emerald green waters to the iconic three peaks of Laveredo, there's so much to see in the Dolomites.Beautiful emerald green waters to the iconic three peaks of Laveredo, there's so much to see in the Dolomites.",
     },
 
     {
